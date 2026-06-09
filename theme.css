@@ -1,0 +1,43 @@
+/* ============================================================
+   Mode sombre — surcharge des variables + bouton bascule.
+   Activé par l'attribut html[data-theme="dark"].
+   ============================================================ */
+
+html[data-theme="dark"]{
+  --bg:     #0f141b;
+  --bg2:    #161d27;
+  --bg3:    #1e2733;
+  --border: #2b3644;
+  --text:   #e7ebf0;   /* contraste élevé sur fond sombre */
+  --muted:  #9fabba;   /* AA sur --bg */
+  --white:  #161d27;
+  color-scheme: dark;
+}
+
+/* éléments avec couleurs littérales (non variabilisées) */
+html[data-theme="dark"] nav{background:rgba(15,20,27,.9)}
+html[data-theme="dark"] .hero::before{
+  background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);
+  opacity:1;
+}
+
+/* place le menu + les boutons à droite */
+.nav-list{margin-left:auto}
+
+/* bouton bascule de thème */
+.theme-toggle{
+  margin-left:.6rem;flex-shrink:0;width:34px;height:34px;padding:0;cursor:pointer;
+  display:inline-flex;align-items:center;justify-content:center;
+  background:none;border:1px solid var(--border);border-radius:8px;color:var(--muted);
+  transition:color .2s,border-color .2s;
+}
+.theme-toggle:hover{color:var(--gold);border-color:var(--gold)}
+.theme-toggle svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round}
+.theme-toggle .sun{display:none}
+html[data-theme="dark"] .theme-toggle .moon{display:none}
+html[data-theme="dark"] .theme-toggle .sun{display:block}
+
+@media(prefers-reduced-motion:reduce){.theme-toggle{transition:none}}
+@media(max-width:660px){.theme-toggle{margin-left:auto}}
