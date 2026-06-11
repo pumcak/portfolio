@@ -107,9 +107,11 @@ footer a{color:var(--gold);text-decoration:none}
   .hb-img,.hb-card:nth-child(even) .hb-img{order:1;height:190px}
   .hb-body,.hb-card:nth-child(even) .hb-body{order:2}
 }
-.hb-img{background:var(--bg3);display:flex;align-items:center;justify-content:center;overflow:hidden}
-.hb-img img{width:100%;height:100%;object-fit:cover}
-.hb-ph{text-align:center}
+.hb-img{position:relative;background:var(--bg3);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hb-img .hb-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hb-img:has(.hb-bg)::after{content:'';position:absolute;inset:0;background:rgba(15,18,22,.45);z-index:1}
+.hb-ph{position:relative;z-index:2;text-align:center}
+.hb-img:has(.hb-bg) .hb-ph svg{stroke:#ffffff;filter:drop-shadow(0 2px 6px rgba(0,0,0,.55))}
 .hb-ph b{font-size:2.8rem;display:block;margin-bottom:.5rem;font-weight:400}
 .hb-ph p{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--muted)}
 .hb-body{padding:2rem;display:flex;flex-direction:column;justify-content:center}
@@ -145,7 +147,8 @@ footer a{color:var(--gold);text-decoration:none}
 
     <div class="hb-card">
       <div class="hb-img">
-        <!-- <img src="images/muscu.jpg" alt="Musculation"> -->
+        <!-- Image de fond (optionnelle) : décommente la ligne et dépose images/hobby-muscu.jpg -->
+        <img class="hb-bg" src="images/hobby-muscu.jpg" alt="">
         <div class="hb-ph"><svg viewBox="0 0 24 24" width="3rem" height="3rem" fill="none" stroke="#c9a96a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6M7 8v8M17 8v8M20 9v6M7 12h10"/></svg></div>
       </div>
       <div class="hb-body">
@@ -157,7 +160,8 @@ footer a{color:var(--gold);text-decoration:none}
 
     <div class="hb-card">
       <div class="hb-img">
-        <!-- <img src="images/dev.jpg" alt="Dev"> -->
+        <!-- Image de fond (optionnelle) : décommente la ligne et dépose images/hobby-dev.jpg -->
+        <img class="hb-bg" src="images/hobby-dev.jpg" alt="">
         <div class="hb-ph"><svg viewBox="0 0 24 24" width="3rem" height="3rem" fill="none" stroke="#7db5a1" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="1"/><path d="M2 20h20"/></svg></div>
       </div>
       <div class="hb-body">
