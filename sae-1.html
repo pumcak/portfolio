@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=JetBrains+Mono:wght@300;400;500&family=Inter:wght@300;400;500&display=swap">
 <link rel="alternate" hreflang="fr" href="sae-1.html">
 <link rel="alternate" hreflang="en" href="en/coursework-1.html">
-<link rel="stylesheet" href="theme.css?v=20260915-4">
+<link rel="stylesheet" href="theme.css?v=20260915-5">
 <script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <script src="theme.js" defer></script>
 <style>
@@ -168,21 +168,13 @@ footer a{color:var(--gold);text-decoration:none}
   <div class="section a3">
     <h3><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-.12em;margin-right:.45em"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>Résultats</h3>
     <p>Le livrable est un programme fonctionnel en C, accompagné de son code source commenté et d'un jeu de tests. L'outil permet de gérer un inventaire complet du début à la fin d'une session, avec persistance des données dans un fichier. Ce dont je suis le plus fier : avoir livré un programme stable, lisible et réutilisable, ma première vraie application concrète de mes bases en C.</p>
-    <div class="bilan">
+    <div class="bilan bilan-solo">
       <div class="bilan-c bilan-plus">
         <b>Ce que j'ai gagné</b>
         <ul>
           <li>Une vraie compréhension des <strong>pointeurs et de la mémoire</strong>, qui n'était qu'une notion de cours avant ce projet.</li>
           <li>Le réflexe de <strong>découper en fonctions courtes</strong> et de tester chaque module isolément avant de l'intégrer.</li>
           <li>La gestion des <strong>cas d'erreur et des saisies invalides</strong> : le programme livré ne plantait sur aucun scénario de test.</li>
-        </ul>
-      </div>
-      <div class="bilan-c bilan-moins">
-        <b>Ce que je referais autrement</b>
-        <ul>
-          <li>J'ai utilisé un <strong>tableau de taille fixe</strong> plutôt qu'une allocation dynamique : simple à écrire, mais l'inventaire est plafonné arbitrairement. Aujourd'hui je partirais sur une liste chaînée.</li>
-          <li>Le <strong>format de fichier était maison</strong> et fragile : une ligne mal formée cassait le chargement. Un format normalisé (CSV strict) aurait évité ça.</li>
-          <li>Nous avons commencé à coder <strong>trop vite, sans schéma préalable</strong>, d'où des refontes en cours de route. C'est la leçon que j'ai appliquée dès le projet suivant.</li>
         </ul>
       </div>
     </div>

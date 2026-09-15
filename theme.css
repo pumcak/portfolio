@@ -132,19 +132,17 @@ html[data-theme="dark"] .stage-cta:hover{color:#0f141b}
 
 /* bilan « ce que j'ai gagné / ce que je referais autrement » */
 .bilan{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.4rem}
+.bilan-solo{grid-template-columns:1fr}
 @media(max-width:660px){.bilan{grid-template-columns:1fr}}
 .bilan-c{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.25rem}
 .bilan-plus{border-left:3px solid var(--teal)}
-.bilan-moins{border-left:3px solid var(--gold)}
 .bilan-c b{
   display:block;font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.1em;
   text-transform:uppercase;margin-bottom:.7rem;font-weight:500;
 }
 .bilan-plus b{color:var(--teal)}
-.bilan-moins b{color:var(--gold)}
 .bilan-c ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
 .bilan-c li{position:relative;padding-left:1.1rem;font-size:.85rem;color:var(--muted);line-height:1.72}
 .bilan-c li::before{content:'';position:absolute;left:0;top:.62em;width:5px;height:5px;border-radius:50%;background:var(--border)}
 .bilan-plus li::before{background:var(--teal)}
-.bilan-moins li::before{background:var(--gold)}
 .bilan-c li strong{color:var(--text);font-weight:500}

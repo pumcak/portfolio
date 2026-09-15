@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=JetBrains+Mono:wght@300;400;500&family=Inter:wght@300;400;500&display=swap">
 <link rel="alternate" hreflang="fr" href="perso.html">
 <link rel="alternate" hreflang="en" href="en/discord-bot.html">
-<link rel="stylesheet" href="theme.css?v=20260915-4">
+<link rel="stylesheet" href="theme.css?v=20260915-5">
 <script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <script src="theme.js" defer></script>
 <style>
@@ -176,7 +176,7 @@ footer a{color:var(--gold);text-decoration:none}
   <div class="section a3">
     <h3><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-.12em;margin-right:.45em"><path d="M12 17v5"/><path d="M9 3h6l-1 6 3 3H7l3-3z"/></svg>Ce que j'en retiens</h3>
     <p>Ce projet m'a appris à consommer une véritable API REST, à raisonner en programmation événementielle et asynchrone, et à organiser un projet JavaScript de A à Z. Au-delà de la technique, j'ai compris l'importance de la gestion des erreurs et des permissions dans un outil utilisé par de vraies personnes. C'est ce projet qui m'a donné le goût du développement back-end.</p>
-    <div class="bilan">
+    <div class="bilan bilan-solo">
       <div class="bilan-c bilan-plus">
         <b>Ce que j'ai gagné</b>
         <ul>
@@ -184,15 +184,6 @@ footer a{color:var(--gold);text-decoration:none}
           <li>La maîtrise concrète de l'<strong>asynchrone</strong> (<code>async/await</code>, promesses) et de l'architecture événementielle.</li>
           <li>L'expérience d'un outil <strong>réellement utilisé par d'autres personnes</strong> : les bugs ont des conséquences visibles, ce qui change la façon de coder.</li>
           <li>Le réflexe de <strong>structurer en modules</strong> dès le départ pour qu'un projet reste maintenable en grossissant.</li>
-        </ul>
-      </div>
-      <div class="bilan-c bilan-moins">
-        <b>Ce que je referais autrement</b>
-        <ul>
-          <li>Les données (warns, configuration) sont stockées dans des <strong>fichiers JSON</strong>. Ça tient pour un serveur, pas pour plusieurs : aujourd'hui je partirais sur une vraie base de données.</li>
-          <li>Je n'ai <strong>écrit aucun test automatisé</strong> : chaque modification imposait de tout revérifier à la main sur un serveur de test.</li>
-          <li>J'ai découvert les <strong><em>rate limits</em></strong> de l'API Discord en cours de route plutôt qu'en amont : les anticiper dès la conception m'aurait évité de reprendre la gestion des appels.</li>
-          <li>Le bot est <strong>pensé pour un seul serveur</strong> : le rendre réellement multi-serveurs demanderait de revoir la façon dont la configuration est isolée.</li>
         </ul>
       </div>
     </div>
