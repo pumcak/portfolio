@@ -42,6 +42,22 @@ html[data-theme="dark"] .theme-toggle .sun{display:block}
 @media(prefers-reduced-motion:reduce){.theme-toggle{transition:none}}
 @media(max-width:660px){.theme-toggle{margin-left:auto}}
 
+/* bascule de langue FR / EN */
+.lang-toggle{
+  margin-left:.6rem;flex-shrink:0;height:34px;padding:0 .62rem;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--muted);text-decoration:none;
+  border:1px solid var(--border);border-radius:8px;
+  transition:color .2s,border-color .2s;
+}
+.lang-toggle:hover{color:var(--gold);border-color:var(--gold)}
+@media(prefers-reduced-motion:reduce){.lang-toggle{transition:none}}
+@media(max-width:660px){
+  .lang-toggle{margin-left:auto}
+  .theme-toggle{margin-left:.45rem}
+}
+
 /* ============================================================
    Éléments partagés par toutes les pages
    ============================================================ */

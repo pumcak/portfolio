@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Activités · Timéo Chabal</title>
+<title>Activities · Timéo Chabal</title>
 <meta name="description" content="Activités et engagements de Timéo Chabal, étudiant en BUT Informatique : musculation, veille technologique et projets personnels.">
 <meta name="author" content="Timéo Chabal">
 <meta name="theme-color" content="#f5f5f5">
@@ -11,11 +11,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=JetBrains+Mono:wght@300;400;500&family=Inter:wght@300;400;500&display=swap">
-<link rel="alternate" hreflang="fr" href="hobbies.html">
-<link rel="alternate" hreflang="en" href="en/activities.html">
-<link rel="stylesheet" href="theme.css?v=20260915-3">
+<link rel="alternate" hreflang="fr" href="../hobbies.html">
+<link rel="alternate" hreflang="en" href="activities.html">
+<link rel="stylesheet" href="../theme.css?v=20260915-3">
 <script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
-<script src="theme.js" defer></script>
+<script src="../theme.js" defer></script>
 <style>
 
 :root {
@@ -132,77 +132,72 @@ footer a{color:var(--gold);text-decoration:none}
 <nav>
   <a href="index.html" class="logo">T<em>.</em>Chabal</a>
   <ul class="nav-list" id="nl">
-    <a href="index.html">Accueil</a>
-    <a href="apropos.html">À propos</a>
-    <a href="competences.html">Compétences</a>
-    <a href="cursus.html">Cursus</a>
-    <a href="hobbies.html" class="active">Activités</a>
-    <a href="realisations.html">Réalisations</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="skills.html">Skills</a>
+    <a href="education.html">Education</a>
+    <a href="activities.html" class="active">Activities</a>
+    <a href="projects.html">Projects</a>
   </ul>
-  <a class="lang-toggle" href="en/activities.html" hreflang="en" lang="en" aria-label="Read this page in English">EN</a>
-  <button class="theme-toggle" type="button" aria-label="Basculer le thème clair / sombre" onclick="toggleTheme()"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
-  <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nl" onclick="this.setAttribute('aria-expanded',document.getElementById('nl').classList.toggle('open'))"><span></span><span></span><span></span></button>
+  <a class="lang-toggle" href="../hobbies.html" hreflang="fr" lang="fr" aria-label="Lire cette page en français">FR</a>
+  <button class="theme-toggle" type="button" aria-label="Toggle light / dark theme" onclick="toggleTheme()"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+  <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nl" onclick="this.setAttribute('aria-expanded',document.getElementById('nl').classList.toggle('open'))"><span></span><span></span><span></span></button>
 </nav>
 
 <div class="wrap">
   <div class="a1">
-    <span class="ph-tag">// En dehors des cours</span>
-    <h1 class="ph-title">Mes activités</h1>
+    <span class="ph-tag">// Outside class</span>
+    <h1 class="ph-title">My activities</h1>
     <div class="ph-line"></div>
   </div>
 
-  <p class="act-intro a1">Ce que je fais de mon temps libre en dit autant sur ma façon de travailler que mes projets de code. Voici mes trois activités régulières, et ce qu'elles m'apportent concrètement dans ma formation.</p>
+  <p class="act-intro a1">What I do with my free time says as much about how I work as my code projects do. Here are the three things I do regularly, and what each one actually brings to my studies.</p>
 
   <div class="hb-stack a2">
 
     <div class="hb-card">
       <div class="hb-img">
-        <img class="hb-bg" src="images/hobby-muscu.jpg" alt="Séance de musculation en salle">
+        <img class="hb-bg" src="../images/hobby-muscu.jpg" alt="Strength training session at the gym">
         <div class="hb-ph"><svg viewBox="0 0 24 24" width="3rem" height="3rem" fill="none" stroke="#c9a96a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6M7 8v8M17 8v8M20 9v6M7 12h10"/></svg></div>
       </div>
       <div class="hb-body">
-        <div class="hb-cat">Sport · Pratique quotidienne</div>
-        <div class="hb-title">Musculation</div>
-        <div class="hb-text">Je m'entraîne <strong>tous les jours</strong>, en autonomie complète&nbsp;: je construis moi-même mes programmes, je suis mes charges et mes progressions séance après séance, et j'ajuste selon les résultats. C'est une discipline sans raccourci : les progrès ne viennent que de la régularité sur plusieurs mois.</div>
-        <div class="hb-gain"><b>Ce que ça m'apporte</b>La constance et la capacité à suivre un plan sur la durée, que je retrouve directement dans ma manière de mener un projet de développement&nbsp;: avancer un peu chaque jour plutôt que tout faire la veille du rendu. Et une vraie clarté mentale pour aborder les problèmes complexes.</div>
+        <div class="hb-cat">Sport · Daily practice</div>
+        <div class="hb-title">Strength training</div>
+        <div class="hb-text">I train <strong>every day</strong>, entirely on my own: I write my own programmes, track my loads and my progress session after session, and adjust based on the results. It is a discipline with no shortcuts: progress only comes from being consistent over months.</div>
+        <div class="hb-gain"><b>What it brings me</b>Consistency, and the ability to stick to a plan over time, which I find directly in the way I run a development project: making a little progress every day rather than doing everything the night before the deadline. Plus a real mental clarity for tackling hard problems.</div>
       </div>
     </div>
 
     <div class="hb-card">
       <div class="hb-img">
-        <img class="hb-bg" src="images/hobby-dev.jpg" alt="Poste de travail et code en cours d'écriture">
+        <img class="hb-bg" src="../images/hobby-dev.jpg" alt="Desk setup with code being written">
         <div class="hb-ph"><svg viewBox="0 0 24 24" width="3rem" height="3rem" fill="none" stroke="#7db5a1" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="1"/><path d="M2 20h20"/></svg></div>
       </div>
       <div class="hb-body">
-        <div class="hb-cat">Autoformation · Projets personnels</div>
-        <div class="hb-title">Développement<br>en autodidacte</div>
-        <div class="hb-text">Je code aussi en dehors du programme, sur des projets que je choisis moi-même. J'ai développé <strong>un bot Discord de modération</strong> en Node.js (un langage et une API qu'aucun cours n'abordait) et <strong>ce portfolio</strong>, écrit à la main en HTML/CSS, sans framework ni générateur de site, avec un thème clair/sombre et un déploiement automatisé.</div>
-        <div class="hb-gain"><b>Ce que ça m'apporte</b>Une méthode pour apprendre seul une technologie inconnue&nbsp;: partir de la documentation officielle, construire un prototype minimal, puis l'étendre. C'est cette autonomie que je veux mettre au service d'une équipe en stage.</div>
-        <div class="hb-links"><a href="perso.html">Voir le bot Discord →</a></div>
+        <div class="hb-cat">Self-teaching · Side projects</div>
+        <div class="hb-title">Self-taught<br>development</div>
+        <div class="hb-text">I also code outside the syllabus, on projects I pick myself. I built <strong>a Discord moderation bot</strong> in Node.js (a language and an API no class covered) and <strong>this portfolio</strong>, written by hand in HTML/CSS, with no framework and no site generator, with a light and dark theme and automated deployment.</div>
+        <div class="hb-gain"><b>What it brings me</b>A method for learning an unfamiliar technology on my own: start from the official documentation, build a minimal prototype, then extend it. That is the autonomy I want to bring to a team during an internship.</div>
+        <div class="hb-links"><a href="discord-bot.html">See the Discord bot →</a></div>
       </div>
     </div>
 
     <div class="hb-card">
       <div class="hb-img">
-        <!-- TODO Timéo : dépose une photo dans images/hobby-veille.jpg pour illustrer cette carte -->
         <div class="hb-ph"><svg viewBox="0 0 24 24" width="3rem" height="3rem" fill="none" stroke="#c9a96a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V6a2 2 0 0 1 2-2h9l5 5v10a2 2 0 0 1-2 2z"/><path d="M15 4v5h5"/><path d="M8 12h8M8 16h5"/></svg></div>
       </div>
       <div class="hb-body">
-        <div class="hb-cat">Veille · Toute l'année</div>
-        <div class="hb-title">Veille technologique</div>
-        <div class="hb-text">Je suis de près l'évolution de l'écosystème du développement mobile et web&nbsp;: sorties d'outils, bonnes pratiques, retours d'expérience de développeurs. Une grande partie de cette veille se fait <strong>en anglais</strong>, ce qui entretient ma lecture technique au quotidien.</div>
-        <div class="hb-gain"><b>Ce que ça m'apporte</b>Ne pas rester enfermé dans ce qui est enseigné en cours, et arriver sur un projet en sachant quels outils existent déjà avant de réinventer la roue.</div>
+        <div class="hb-cat">Tech watch · All year round</div>
+        <div class="hb-title">Keeping up with the field</div>
+        <div class="hb-text">I follow how the mobile and web development ecosystem moves: tool releases, good practice, what other developers report from experience. Much of this reading is <strong>in English</strong>, which keeps my technical reading sharp day to day.</div>
+        <div class="hb-gain"><b>What it brings me</b>Not staying locked into what is taught in class, and arriving on a project knowing which tools already exist before reinventing the wheel.</div>
       </div>
     </div>
 
   </div>
 
-  <!-- TODO Timéo : si tu as d'autres activités valorisables (bénévolat, associatif, job d'été,
-       permis de conduire, encadrement sportif…), duplique un bloc .hb-card ci-dessus.
-       Les recruteurs de stage y sont sensibles : elles montrent des qualités
-       que le code seul ne démontre pas. -->
 </div>
 
-<footer><span>Timéo Chabal · BUT Informatique, parcours Plateformes mobiles · 2025-2028</span><span class="foot-stage">Recherche un stage de 10 semaines · avril 2027</span><a href="mailto:chabaltimeo@gmail.com">chabaltimeo@gmail.com</a></footer>
+<footer><span>Timéo Chabal · BUT Computer Science, mobile applications track · 2025-2028</span><span class="foot-stage">Looking for a 10-week internship · April 2027</span><a href="mailto:chabaltimeo@gmail.com">chabaltimeo@gmail.com</a></footer>
 </body>
 </html>

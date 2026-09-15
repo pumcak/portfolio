@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stock management tool in C · Timéo Chabal</title>
+<meta name="description" content="Coursework project 1.02 by Timéo Chabal: a stock management tool written in C, with context, goals, the work done and the results.">
+<meta name="author" content="Timéo Chabal">
+<meta name="theme-color" content="#f5f5f5">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='8' y='78' font-size='80' font-family='Georgia,serif' fill='%23c9a96a'>T</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=JetBrains+Mono:wght@300;400;500&family=Inter:wght@300;400;500&display=swap">
+<link rel="alternate" hreflang="fr" href="../sae-1.html">
+<link rel="alternate" hreflang="en" href="coursework-1.html">
+<link rel="stylesheet" href="../theme.css?v=20260915-3">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<script src="../theme.js" defer></script>
+<style>
+
+:root {
+  --bg:     #f5f5f5;
+  --bg2:    #ffffff;
+  --bg3:    #f0f0f0;
+  --border: #cccccc;
+  --text:   #333333;
+  --muted:  #666666;
+  --gold:   #c9a96a;
+  --teal:   #7db5a1;
+  --white:  #ffffff;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-weight:400;line-height:1.65;min-height:100vh}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:999;height:58px;background:rgba(245,245,245,.95);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem}
+.logo{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--text);text-decoration:none;letter-spacing:.02em}
+.logo em{color:var(--gold);font-style:normal}
+.nav-list{display:flex;gap:.2rem;list-style:none}
+.nav-list a{font-family:'JetBrains Mono',monospace;font-size:.68rem;font-weight:400;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:.32rem .7rem;border-radius:6px;transition:color .2s,background .2s}
+.nav-list a:hover{color:var(--text);background:var(--bg3)}
+.nav-list a.active{color:var(--gold);background:var(--bg2)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.burger span{display:block;width:21px;height:2px;background:var(--muted);transition:.3s;border-radius:2px}
+
+/* WRAPPER */
+.wrap{max-width:880px;margin:0 auto;padding:6.5rem 2rem 5rem}
+
+/* PAGE HEADER */
+.ph-tag{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.55rem;display:block}
+.ph-title{font-family:'Playfair Display',serif;font-size:clamp(2.1rem,4vw,3rem);color:var(--text);line-height:1.1;letter-spacing:-.01em;margin-bottom:.4rem}
+.ph-line{width:34px;height:2px;background:var(--gold);margin:1rem 0 2.5rem}
+
+/* BACK */
+.back{display:inline-flex;align-items:center;gap:.4rem;font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;margin-bottom:2rem;transition:color .2s;border:none;background:none;cursor:pointer}
+.back:hover{color:var(--gold)}
+
+/* CARD */
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;transition:border-color .25s,transform .25s}
+.card:hover{border-color:rgba(201,169,106,.35);transform:translateY(-3px)}
+
+/* EDITABLE hint */
+
+/* IMG SLOT */
+.img-slot{background:var(--bg3);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.img-slot img{width:100%;height:100%;object-fit:cover;display:block}
+.slot-ph{text-align:center;font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--muted);line-height:1.7}
+.slot-ph b{font-size:2rem;display:block;margin-bottom:.3rem;font-weight:400}
+
+/* CONTENT SECTIONS */
+.section{margin-bottom:2.2rem}
+.section h3{font-family:'JetBrains Mono',monospace;font-size:.67rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:.85rem}
+.section p{font-size:.93rem;color:var(--muted);line-height:1.88}
+
+/* CHIPS */
+.chips{display:flex;gap:.5rem;flex-wrap:wrap;margin:.5rem 0}
+.chip{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.06em;background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:.22rem .75rem;color:var(--muted)}
+.chip strong{color:var(--gold);font-weight:500}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:1.8rem 2.5rem;display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;margin-top:5rem}
+footer a{color:var(--gold);text-decoration:none}
+
+/* ANIM */
+@keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.a1{animation:up .65s ease both}
+.a2{animation:up .65s .12s ease both}
+.a3{animation:up .65s .22s ease both}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}.a1,.a2,.a3{opacity:1;transform:none}}
+
+/* RESPONSIVE */
+@media(max-width:660px){
+  nav{padding:0 1.2rem}
+  .nav-list{display:none;position:fixed;top:58px;left:0;right:0;flex-direction:column;background:var(--bg2);border-bottom:1px solid var(--border);padding:1rem 1.4rem;gap:.1rem}
+  .nav-list.open{display:flex}
+  .burger{display:flex}
+  .wrap{padding:5.5rem 1.2rem 4rem}
+}
+.cover{width:100%;height:280px;background:var(--bg3);border-radius:13px;overflow:hidden;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);margin-bottom:2.2rem}
+.cover img{width:100%;height:100%;object-fit:cover}
+.cover-ph{text-align:center}
+.cover-ph b{font-size:2.8rem;display:block;margin-bottom:.4rem;font-weight:400}
+.cover-ph p{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--muted)}
+.sd-title{font-family:'Playfair Display',serif;font-size:clamp(1.75rem,3.5vw,2.5rem);color:var(--text);line-height:1.1;margin-bottom:.4rem}
+.meta{display:flex;gap:.55rem;flex-wrap:wrap;margin:1.3rem 0 2.2rem}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">T<em>.</em>Chabal</a>
+  <ul class="nav-list" id="nl">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="skills.html">Skills</a>
+    <a href="education.html">Education</a>
+    <a href="activities.html">Activities</a>
+    <a href="projects.html" class="active">Projects</a>
+  </ul>
+  <a class="lang-toggle" href="../sae-1.html" hreflang="fr" lang="fr" aria-label="Lire cette page en français">FR</a>
+  <button class="theme-toggle" type="button" aria-label="Toggle light / dark theme" onclick="toggleTheme()"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+  <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nl" onclick="this.setAttribute('aria-expanded',document.getElementById('nl').classList.toggle('open'))"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="wrap">
+  <a href="coursework.html" class="back a1">← All coursework projects</a>
+
+  <div class="cover a1">
+    <img src="../images/sae1-cover.jpg" alt="Coursework project 1">
+  </div>
+
+  <div class="a2">
+    <span class="ph-tag">Project 1.02 · Semester 1 · 2025-2026</span>
+    <h1 class="sd-title">Stock management tool in C</h1>
+    <div class="meta">
+      <span class="chip"><strong>Context:</strong> <span>Project 1.02 · Software development</span></span>
+      <span class="chip"><strong>Duration:</strong> <span>1 month</span></span>
+      <span class="chip"><strong>Team:</strong> <span>Pair</span></span>
+      <span class="chip"><strong>Stack:</strong> <span>C · Algorithms</span></span>
+    </div>
+    <div class="ph-line"></div>
+  </div>
+
+
+  <div class="section a2" style="margin-top:1.5rem">
+    <h3><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-.12em;margin-right:.45em"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg>Context</h3>
+    <p>Built <strong>in a pair</strong>, over <strong>one month</strong>, in the first semester of my first year on the BUT in Computer Science. The topic and the technical constraints were set by the lecturer, but the design and the organisation of the work were <strong>entirely down to us</strong>: we decided ourselves how to split the code into functions, what storage format to use and how to share out the tasks, with a weekly check-in with our supervisor.</p>
+    <p>This project mainly covers competencies <strong>C1 (Build an application)</strong> and <strong>C4 (Manage information and data)</strong>.</p>
+  </div>
+
+  <div class="section a2">
+    <h3><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-.12em;margin-right:.45em"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>Goal</h3>
+    <p>Design a stock management tool in C to track items: adding, removing, editing, searching and displaying the inventory. What was expected was <strong>the program only</strong>: no graphical interface was required, and the marking was based on the correctness of the algorithms, how the code was structured and how reliably the data was saved.</p>
+    <p>Three constraints were imposed: <strong>procedural</strong> C (no objects), a <strong>command-line</strong> interface, and data <strong>saved to files</strong>, so no database.</p>
+  </div>
+
+  <div class="section a2">
+    <h3><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-.12em;margin-right:.45em"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-2.5z"/></svg>What I did</h3>
+    <p>I built a program structured around structs representing the items: reference, label, quantity and price. I implemented the main menu functions: adding an item, removing stock, updating quantities, searching by name or by reference, and displaying a sorted inventory. I also handled saving and loading the data from a file, along with validating user input and dealing with error cases.</p>
+  </div>
+
+  <div class="section a3">
+    <h3><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-.12em;margin-right:.45em"><path d="M9 4.5a1.5 1.5 0 0 1 3 0c0 .6.4 1 1 1h1.5a1 1 0 0 1 1 1V8c0 .6.4 1 1 1a1.5 1.5 0 0 1 0 3c-.6 0-1 .4-1 1v2.5a1 1 0 0 1-1 1H13c-.6 0-1-.4-1-1a1.5 1.5 0 0 0-3 0c0 .6-.4 1-1 1H6.5a1 1 0 0 1-1-1V13c0-.6-.4-1-1-1a1.5 1.5 0 0 1 0-3c.6 0 1-.4 1-1V6.5a1 1 0 0 1 1-1H8c.6 0 1-.4 1-1z"/></svg>Difficulties &amp; what I learned</h3>
+    <p>The main difficulty was handling memory and strings in C, along with reading from and writing to files reliably. I learned to split my code into clear functions, to test each module on its own and to anticipate invalid input. This project moved me forward on algorithmic rigour and on handling data structures.</p>
+  </div>
+
+  <div class="section a3">
+    <h3><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-.12em;margin-right:.45em"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>Results</h3>
+    <p>The deliverable is a working C program, with commented source code and a set of tests. The tool handles a full inventory from the start to the end of a session, with the data saved to a file. What I am proudest of: delivering a stable, readable and reusable program, my first real application of what I knew in C.</p>
+    <div class="bilan">
+      <div class="bilan-c bilan-plus">
+        <b>What I gained</b>
+        <ul>
+          <li>A real understanding of <strong>pointers and memory</strong>, which was only a lecture concept before this project.</li>
+          <li>The habit of <strong>splitting code into short functions</strong> and testing each module on its own before integrating it.</li>
+          <li>Handling <strong>error cases and invalid input</strong>: the program we handed in did not crash on a single test scenario.</li>
+        </ul>
+      </div>
+      <div class="bilan-c bilan-moins">
+        <b>What I would do differently</b>
+        <ul>
+          <li>I used a <strong>fixed-size array</strong> instead of dynamic allocation: easy to write, but the inventory is capped arbitrarily. Today I would go with a linked list.</li>
+          <li>The <strong>file format was homemade</strong> and fragile: one badly formed line broke loading. A standard format such as strict CSV would have avoided that.</li>
+          <li>We started coding <strong>too fast, with nothing drawn up first</strong>, which led to rewrites along the way. That is the lesson I applied on the very next project.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section a3">
+    <a class="repo" href="https://codefirst.iut.uca.fr/gitlab/tichabal" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4 10 14"/><path d="M19 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"/></svg>View the code on GitLab</a>
+  </div>
+</div>
+
+<footer><span>Timéo Chabal · BUT Computer Science, mobile applications track · 2025-2028</span><span class="foot-stage">Looking for a 10-week internship · April 2027</span><a href="mailto:chabaltimeo@gmail.com">chabaltimeo@gmail.com</a></footer>
+</body>
+</html>
