@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hobbies — Timéo Chabal</title>
-<meta name="description" content="Centres d'intérêt de Timéo Chabal : musculation et passion pour l'informatique.">
+<title>Activités · Timéo Chabal</title>
+<meta name="description" content="Activités et engagements de Timéo Chabal, étudiant en BUT Informatique : musculation, veille technologique et projets personnels.">
 <meta name="author" content="Timéo Chabal">
 <meta name="theme-color" content="#f5f5f5">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='8' y='78' font-size='80' font-family='Georgia,serif' fill='%23c9a96a'>T</text></svg>">
@@ -118,6 +118,12 @@ footer a{color:var(--gold);text-decoration:none}
 .hb-cat{font-family:'JetBrains Mono',monospace;font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
 .hb-title{font-family:'Playfair Display',serif;font-size:1.65rem;color:var(--text);line-height:1.15;margin-bottom:.9rem}
 .hb-text{font-size:.92rem;color:var(--muted);line-height:1.88}
+.hb-text strong{color:var(--text);font-weight:500}
+.act-intro{color:var(--muted);font-size:.94rem;max-width:560px;line-height:1.88;margin:-1.4rem 0 2.4rem}
+.hb-gain{margin-top:.9rem;padding-top:.8rem;border-top:1px dashed var(--border);font-size:.85rem;color:var(--muted);line-height:1.78}
+.hb-gain b{display:block;font-family:"JetBrains Mono",monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:.3rem;font-weight:500}
+.hb-links{margin-top:.9rem}
+.hb-links a{font-family:"JetBrains Mono",monospace;font-size:.64rem;letter-spacing:.08em;color:var(--gold);text-decoration:none}
 </style>
 </head>
 <body>
@@ -128,7 +134,7 @@ footer a{color:var(--gold);text-decoration:none}
     <a href="apropos.html">À propos</a>
     <a href="competences.html">Compétences</a>
     <a href="cursus.html">Cursus</a>
-    <a href="hobbies.html" class="active">Hobbies</a>
+    <a href="hobbies.html" class="active">Activités</a>
     <a href="realisations.html">Réalisations</a>
   </ul>
   <button class="theme-toggle" type="button" aria-label="Basculer le thème clair / sombre" onclick="toggleTheme()"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
@@ -137,43 +143,63 @@ footer a{color:var(--gold);text-decoration:none}
 
 <div class="wrap">
   <div class="a1">
-    <span class="ph-tag">// En dehors du code</span>
-    <h1 class="ph-title">Ce qui me<br>construit</h1>
+    <span class="ph-tag">// En dehors des cours</span>
+    <h1 class="ph-title">Mes activités</h1>
     <div class="ph-line"></div>
   </div>
 
+  <p class="act-intro a1">Ce que je fais de mon temps libre en dit autant sur ma façon de travailler que mes projets de code. Voici mes trois activités régulières, et ce qu'elles m'apportent concrètement dans ma formation.</p>
 
   <div class="hb-stack a2">
 
     <div class="hb-card">
       <div class="hb-img">
-        <!-- Image de fond (optionnelle) : décommente la ligne et dépose images/hobby-muscu.jpg -->
-        <img class="hb-bg" src="images/hobby-muscu.jpg" alt="">
+        <img class="hb-bg" src="images/hobby-muscu.jpg" alt="Séance de musculation en salle">
         <div class="hb-ph"><svg viewBox="0 0 24 24" width="3rem" height="3rem" fill="none" stroke="#c9a96a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6M7 8v8M17 8v8M20 9v6M7 12h10"/></svg></div>
       </div>
       <div class="hb-body">
-        <div class="hb-cat">Sport · Pratique journalière</div>
+        <div class="hb-cat">Sport · Pratique quotidienne</div>
         <div class="hb-title">Musculation</div>
-        <div class="hb-text">La pratique journalière de la musculation me permet de maintenir une bonne forme physique et de renforcer ma discipline. Au quotidien, elle m'apporte calme et clarté mentale. Le dépassement de mes limites me permet de progresser régulièrement.</div>
+        <div class="hb-text">Je m'entraîne <strong>tous les jours</strong>, en autonomie complète&nbsp;: je construis moi-même mes programmes, je suis mes charges et mes progressions séance après séance, et j'ajuste selon les résultats. C'est une discipline sans raccourci : les progrès ne viennent que de la régularité sur plusieurs mois.</div>
+        <div class="hb-gain"><b>Ce que ça m'apporte</b>La constance et la capacité à suivre un plan sur la durée, que je retrouve directement dans ma manière de mener un projet de développement&nbsp;: avancer un peu chaque jour plutôt que tout faire la veille du rendu. Et une vraie clarté mentale pour aborder les problèmes complexes.</div>
       </div>
     </div>
 
     <div class="hb-card">
       <div class="hb-img">
-        <!-- Image de fond (optionnelle) : décommente la ligne et dépose images/hobby-dev.jpg -->
-        <img class="hb-bg" src="images/hobby-dev.jpg" alt="">
+        <img class="hb-bg" src="images/hobby-dev.jpg" alt="Poste de travail et code en cours d'écriture">
         <div class="hb-ph"><svg viewBox="0 0 24 24" width="3rem" height="3rem" fill="none" stroke="#7db5a1" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="1"/><path d="M2 20h20"/></svg></div>
       </div>
       <div class="hb-body">
-        <div class="hb-cat">Passion</div>
-        <div class="hb-title">Informatique</div>
-        <div class="hb-text">Au delà des cours, l'informatique me passionne à travers le défi de résoudre des problèmes complexes et d'apprendre de nouvelles technologies.</div>
+        <div class="hb-cat">Autoformation · Projets personnels</div>
+        <div class="hb-title">Développement<br>en autodidacte</div>
+        <div class="hb-text">Je code aussi en dehors du programme, sur des projets que je choisis moi-même. J'ai développé <strong>un bot Discord de modération</strong> en Node.js (un langage et une API qu'aucun cours n'abordait) et <strong>ce portfolio</strong>, écrit à la main en HTML/CSS, sans framework ni générateur de site, avec un thème clair/sombre et un déploiement automatisé.</div>
+        <div class="hb-gain"><b>Ce que ça m'apporte</b>Une méthode pour apprendre seul une technologie inconnue&nbsp;: partir de la documentation officielle, construire un prototype minimal, puis l'étendre. C'est cette autonomie que je veux mettre au service d'une équipe en stage.</div>
+        <div class="hb-links"><a href="perso.html">Voir le bot Discord →</a></div>
+      </div>
+    </div>
+
+    <div class="hb-card">
+      <div class="hb-img">
+        <!-- TODO Timéo : dépose une photo dans images/hobby-veille.jpg pour illustrer cette carte -->
+        <div class="hb-ph"><svg viewBox="0 0 24 24" width="3rem" height="3rem" fill="none" stroke="#c9a96a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V6a2 2 0 0 1 2-2h9l5 5v10a2 2 0 0 1-2 2z"/><path d="M15 4v5h5"/><path d="M8 12h8M8 16h5"/></svg></div>
+      </div>
+      <div class="hb-body">
+        <div class="hb-cat">Veille · Toute l'année</div>
+        <div class="hb-title">Veille technologique</div>
+        <div class="hb-text">Je suis de près l'évolution de l'écosystème du développement mobile et web&nbsp;: sorties d'outils, bonnes pratiques, retours d'expérience de développeurs. Une grande partie de cette veille se fait <strong>en anglais</strong>, ce qui entretient ma lecture technique au quotidien.</div>
+        <div class="hb-gain"><b>Ce que ça m'apporte</b>Ne pas rester enfermé dans ce qui est enseigné en cours, et arriver sur un projet en sachant quels outils existent déjà avant de réinventer la roue.</div>
       </div>
     </div>
 
   </div>
+
+  <!-- TODO Timéo : si tu as d'autres activités valorisables (bénévolat, associatif, job d'été,
+       permis de conduire, encadrement sportif…), duplique un bloc .hb-card ci-dessus.
+       Les recruteurs de stage y sont sensibles : elles montrent des qualités
+       que le code seul ne démontre pas. -->
 </div>
 
-<footer><span>Timéo Chabal · BUT Informatique 2025–2028</span><a href="mailto:chabaltimeo@gmail.com">chabaltimeo@gmail.com</a></footer>
+<footer><span>Timéo Chabal · BUT Informatique, parcours Plateformes mobiles · 2025-2028</span><span class="foot-stage">Recherche un stage de 10 semaines · avril 2027</span><a href="mailto:chabaltimeo@gmail.com">chabaltimeo@gmail.com</a></footer>
 </body>
 </html>

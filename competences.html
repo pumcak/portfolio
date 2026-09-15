@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Compétences — Timéo Chabal</title>
-<meta name="description" content="Compétences techniques de Timéo Chabal : C/C++, C#, web, SQL, réseaux et systèmes.">
+<title>Compétences · Timéo Chabal</title>
+<meta name="description" content="Compétences de Timéo Chabal, étudiant en BUT2 Informatique : C/C++, C#, .NET MAUI, JavaScript, SQL, web, réseaux, Git et anglais.">
 <meta name="author" content="Timéo Chabal">
 <meta name="theme-color" content="#f5f5f5">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='8' y='78' font-size='80' font-family='Georgia,serif' fill='%23c9a96a'>T</text></svg>">
@@ -55,6 +55,11 @@ footer a{color:var(--gold);text-decoration:none}
 .sk-desc{margin-top:.7rem;font-size:.84rem;color:var(--muted);line-height:1.68}
 .note{margin-top:2.8rem;padding:1.1rem 1.4rem;background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--teal);border-radius:8px;font-size:.88rem;color:var(--muted);line-height:1.78}
 .note strong{color:var(--text)}
+.legend{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin:-1.6rem 0 2.4rem;font-size:.8rem;color:var(--muted)}
+.legend-t{margin-right:1.2rem}
+.intro strong{color:var(--text);font-weight:500}
+.sk-card code{font-family:'JetBrains Mono',monospace;font-size:.78em;background:var(--bg3);border-radius:4px;padding:.05em .35em}
+#qualites{scroll-margin-top:5rem}
 </style>
 </head>
 <body>
@@ -65,7 +70,7 @@ footer a{color:var(--gold);text-decoration:none}
     <a href="apropos.html">À propos</a>
     <a href="competences.html" class="active">Compétences</a>
     <a href="cursus.html">Cursus</a>
-    <a href="hobbies.html">Hobbies</a>
+    <a href="hobbies.html">Activités</a>
     <a href="realisations.html">Réalisations</a>
   </ul>
   <button class="theme-toggle" type="button" aria-label="Basculer le thème clair / sombre" onclick="toggleTheme()"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
@@ -79,38 +84,76 @@ footer a{color:var(--gold);text-decoration:none}
     <div class="ph-line"></div>
   </div>
 
-  <p class="intro a2">Étudiant en 1ère année de BUT Informatique, je développe mes compétences sur un large spectre — du bas niveau (C/C++) aux interfaces web, en passant par les bases de données et les réseaux.</p>
+  <p class="intro a2">Étudiant en 2<sup>e</sup> année de BUT Informatique, parcours <strong>développement d'applications pour plateformes mobiles</strong>. Plutôt que des pourcentages, je distingue ici ce que je maîtrise et sais réutiliser seul de ce que je suis en train d'apprendre cette année.</p>
 
-  <div class="cat-lbl a2">Langages</div>
-  <div class="sk-grid a3" data-animate>
-    <div class="sk-card"><div class="sk-top"><span class="sk-name">C / C++</span><span class="sk-pct">80%</span></div><div class="sk-bar"><div class="sk-fill" data-w="80" style="background:linear-gradient(90deg,#c9a96a88,#c9a96a)"></div></div><div class="sk-desc">Algorithmique, pointeurs, gestion mémoire, projets SAÉ.</div></div>
-    <div class="sk-card"><div class="sk-top"><span class="sk-name">C#</span><span class="sk-pct">45%</span></div><div class="sk-bar"><div class="sk-fill" data-w="45" style="background:linear-gradient(90deg,#c9a96a88,#c9a96a)"></div></div><div class="sk-desc">Orienté objet, premières applications .NET MAUI.</div></div>
+  <div class="legend a2">
+    <span class="badge badge-ok">Acquis</span><span class="legend-t">je l'ai utilisé sur un projet abouti et je sais le réutiliser sans aide</span>
+    <span class="badge badge-wip">En cours</span><span class="legend-t">au programme du BUT2 ou en apprentissage sur mes projets</span>
   </div>
 
-  <div class="cat-lbl a2">Web & Base de données</div>
-  <div class="sk-grid a3" data-animate>
-    <div class="sk-card"><div class="sk-top"><span class="sk-name">HTML / CSS</span><span class="sk-pct">60%</span></div><div class="sk-bar"><div class="sk-fill" data-w="60" style="background:linear-gradient(90deg,#7db5a188,#7db5a1)"></div></div><div class="sk-desc">Intégration web, responsive, animations CSS.</div></div>
-    <div class="sk-card"><div class="sk-top"><span class="sk-name">SQL & BDD</span><span class="sk-pct">70%</span></div><div class="sk-bar"><div class="sk-fill" data-w="70" style="background:linear-gradient(90deg,#7db5a188,#7db5a1)"></div></div><div class="sk-desc">Modélisation relationnelle, requêtes, jointures.</div></div>
+  <div class="cat-lbl a2">Langages &amp; programmation</div>
+  <div class="sk-grid a3">
+    <div class="sk-card"><div class="sk-top"><span class="sk-name">C</span><span class="badge badge-ok">Acquis</span></div><div class="sk-desc">Algorithmique, structures, pointeurs, gestion mémoire et lecture/écriture de fichiers. Mis en œuvre sur la SAÉ 1.02 (gestion de stock).</div></div>
+    <div class="sk-card"><div class="sk-top"><span class="sk-name">C# &amp; orienté objet</span><span class="badge badge-ok">Acquis</span></div><div class="sk-desc">Classes, héritage, encapsulation, séparation des données et de la logique métier. Mis en œuvre sur le projet Onitama.</div></div>
+    <div class="sk-card"><div class="sk-top"><span class="sk-name">JavaScript / Node.js</span><span class="badge badge-ok">Acquis</span></div><div class="sk-desc">Programmation asynchrone (<code>async/await</code>), architecture événementielle, consommation d'une API REST. Appris en autodidacte sur mon bot Discord.</div></div>
+    <div class="sk-card"><div class="sk-top"><span class="sk-name">C++</span><span class="badge badge-wip">En cours</span></div><div class="sk-desc">Bases vues en première année&nbsp;; je consolide la partie objet et la bibliothèque standard.</div></div>
   </div>
 
-  <div class="cat-lbl a2">Système & Réseau</div>
-  <div class="sk-grid a3" data-animate>
-    <div class="sk-card"><div class="sk-top"><span class="sk-name">Bash / Shell</span><span class="sk-pct">50%</span></div><div class="sk-bar"><div class="sk-fill" data-w="50" style="background:linear-gradient(90deg,#c9a96a88,#c9a96a)"></div></div><div class="sk-desc">Scripts systèmes, automatisation, Linux.</div></div>
-    <div class="sk-card"><div class="sk-top"><span class="sk-name">Réseaux</span><span class="sk-pct">55%</span></div><div class="sk-bar"><div class="sk-fill" data-w="55" style="background:linear-gradient(90deg,#7db5a188,#7db5a1)"></div></div><div class="sk-desc">Modèle OSI, protocoles TCP/IP, routage de base.</div></div>
+  <div class="cat-lbl a2">Applications mobiles &amp; web</div>
+  <div class="sk-grid a3">
+    <div class="sk-card"><div class="sk-top"><span class="sk-name">.NET MAUI / XAML</span><span class="badge badge-wip">En cours</span></div><div class="sk-desc">Cœur de ma spécialité de BUT2. Première application bureau livrée en binôme&nbsp;; j'aborde cette année le portage vers les plateformes mobiles.</div></div>
+    <div class="sk-card"><div class="sk-top"><span class="sk-name">HTML / CSS</span><span class="badge badge-ok">Acquis</span></div><div class="sk-desc">Intégration responsive, thème clair/sombre, animations. Ce portfolio est écrit et déployé à la main, sans framework.</div></div>
+    <div class="sk-card"><div class="sk-top"><span class="sk-name">Développement web côté serveur</span><span class="badge badge-wip">En cours</span></div><div class="sk-desc">Au programme du semestre 3&nbsp;: application adossée à une base de données et à un serveur (SAÉ 3.A.01).</div></div>
+    <div class="sk-card"><div class="sk-top"><span class="sk-name">Architecture logicielle &amp; qualité</span><span class="badge badge-wip">En cours</span></div><div class="sk-desc">Analyse, conception, tests et qualité de développement : enseignements clés de la deuxième année.</div></div>
   </div>
 
-  <div class="note a3"><strong><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-.12em;margin-right:.4em"><path d="M12 17v5"/><path d="M9 3h6l-1 6 3 3H7l3-3z"/></svg>Note</strong><br>Les pourcentages reflètent mon niveau relatif en fin de BUT 1. Chaque SAÉ enrichit ces compétences — cette page évoluera au fil des semestres.</div>
+  <div class="cat-lbl a2">Données</div>
+  <div class="sk-grid a3">
+    <div class="sk-card"><div class="sk-top"><span class="sk-name">SQL &amp; modélisation</span><span class="badge badge-ok">Acquis</span></div><div class="sk-desc">Modèle relationnel, requêtes, jointures et agrégats sur une base de taille raisonnable.</div></div>
+    <div class="sk-card"><div class="sk-top"><span class="sk-name">Bases de données avancées</span><span class="badge badge-wip">En cours</span></div><div class="sk-desc">Optimisation des requêtes, intégration applicative et cohérence des données, au programme du BUT2.</div></div>
+  </div>
+
+  <div class="cat-lbl a2">Système, réseau &amp; outils</div>
+  <div class="sk-grid a3">
+    <div class="sk-card"><div class="sk-top"><span class="sk-name">Git / GitLab</span><span class="badge badge-ok">Acquis</span></div><div class="sk-desc">Branches, commits, gestion des conflits et travail à plusieurs sur un même dépôt. Utilisé sur toutes mes SAÉ via le GitLab de l'IUT.</div></div>
+    <div class="sk-card"><div class="sk-top"><span class="sk-name">Bash / Linux</span><span class="badge badge-ok">Acquis</span></div><div class="sk-desc">Ligne de commande, scripts d'automatisation, droits et arborescence de fichiers.</div></div>
+    <div class="sk-card"><div class="sk-top"><span class="sk-name">Réseaux</span><span class="badge badge-wip">En cours</span></div><div class="sk-desc">Modèle OSI et TCP/IP acquis en BUT1&nbsp;; architecture réseau et virtualisation au programme cette année.</div></div>
+    <div class="sk-card"><div class="sk-top"><span class="sk-name">Cryptographie &amp; sécurité</span><span class="badge badge-wip">En cours</span></div><div class="sk-desc">Enseignement de deuxième année&nbsp;: principes cryptographiques et sécurisation des applications.</div></div>
+  </div>
+
+  <div class="cat-lbl a2">Langues</div>
+  <div class="sk-grid a3">
+    <div class="sk-card"><div class="sk-top"><span class="sk-name">Français</span><span class="badge badge-ok">Langue maternelle</span></div><div class="sk-desc">Rédaction de documentation technique et de livrables de suivi de projet.</div></div>
+    <div class="sk-card"><div class="sk-top"><span class="sk-name">Anglais</span><span class="badge badge-ok">Acquis</span></div><div class="sk-desc">Utilisation régulière à l'oral comme à l'écrit.</div></div>
+  </div>
+
+  <div class="cat-lbl a2" id="qualites">Qualités &amp; savoir-être</div>
+  <div class="qual a3">
+    <div class="qual-i">
+      <div class="qual-h"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V6a2 2 0 0 1 2-2h9l5 5v11a2 2 0 0 1-2 2z"/><path d="M15 4v5h5"/><path d="m9 14 2 2 4-4"/></svg>Rigueur</div>
+      <div class="qual-d">Vérifier et tester avant de livrer.</div>
+      <div class="qual-p"><b>En pratique</b>SAÉ 1.02&nbsp;: saisies contrôlées et modules testés un à un, aucun plantage au rendu.</div>
+    </div>
+    <div class="qual-i">
+      <div class="qual-h"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.2 1 2.5h6c0-1.3.3-1.8 1-2.5A6 6 0 0 0 12 3z"/><path d="M9 18h6"/><path d="M10 21h4"/></svg>Autonomie</div>
+      <div class="qual-d">Démarrer seul, chercher par moi-même.</div>
+      <div class="qual-p"><b>En pratique</b>Bot Discord développé de bout en bout&nbsp;: Node.js et l'API Discord appris hors programme.</div>
+    </div>
+    <div class="qual-i">
+      <div class="qual-h"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 20v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="3.2"/><path d="M22 20v-2a4 4 0 0 0-3-3.9"/><path d="M16 3.2a4 4 0 0 1 0 7.6"/></svg>Esprit d'équipe</div>
+      <div class="qual-d">Écrire du code que mon binôme peut reprendre.</div>
+      <div class="qual-p"><b>En pratique</b>18 semaines en binôme sur Onitama&nbsp;: modules répartis, suivi GitLab, relectures croisées.</div>
+    </div>
+    <div class="qual-i">
+      <div class="qual-h"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16"/><path d="m6 16 4-5 3 3 5-7"/><path d="M18 7h-3"/><path d="M18 7v3"/></svg>Persévérance</div>
+      <div class="qual-d">Comprendre un problème plutôt que le contourner.</div>
+      <div class="qual-p"><b>En pratique</b>Musculation quotidienne&nbsp;: la même logique de progression régulière qu'au code.</div>
+    </div>
+  </div>
+
+  <div class="note a3"><strong><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-.12em;margin-right:.4em"><path d="M12 17v5"/><path d="M9 3h6l-1 6 3 3H7l3-3z"/></svg>Note</strong><br>Cette page reflète mon niveau à l'entrée en 2<sup>e</sup> année. Chaque SAÉ fait basculer des compétences de « en cours » vers « acquis », et elle est mise à jour à chaque fin de semestre.</div>
 </div>
 
-<footer><span>Timéo Chabal · BUT Informatique 2025–2028</span><a href="mailto:chabaltimeo@gmail.com">chabaltimeo@gmail.com</a></footer>
-
-<script>
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if(e.isIntersecting) e.target.querySelectorAll('.sk-fill').forEach(b => b.style.width = b.dataset.w + '%');
-  });
-},{threshold:.2});
-document.querySelectorAll('[data-animate]').forEach(g => obs.observe(g));
-</script>
+<footer><span>Timéo Chabal · BUT Informatique, parcours Plateformes mobiles · 2025-2028</span><span class="foot-stage">Recherche un stage de 10 semaines · avril 2027</span><a href="mailto:chabaltimeo@gmail.com">chabaltimeo@gmail.com</a></footer>
 </body>
 </html>

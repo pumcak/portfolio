@@ -41,3 +41,93 @@ html[data-theme="dark"] .theme-toggle .sun{display:block}
 
 @media(prefers-reduced-motion:reduce){.theme-toggle{transition:none}}
 @media(max-width:660px){.theme-toggle{margin-left:auto}}
+
+/* ============================================================
+   Éléments partagés par toutes les pages
+   ============================================================ */
+
+/* mention « recherche de stage » dans le pied de page */
+.foot-stage{color:var(--gold)}
+@media(max-width:760px){
+  footer{flex-direction:column;gap:.5rem;text-align:center}
+}
+
+/* bandeau « recherche de stage » */
+.stage{
+  display:flex;align-items:center;gap:1.1rem;flex-wrap:wrap;
+  background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--gold);
+  border-radius:12px;padding:1.1rem 1.4rem;margin-bottom:2.6rem;
+}
+.stage-dot{
+  width:9px;height:9px;border-radius:50%;background:var(--gold);flex-shrink:0;
+  box-shadow:0 0 0 4px rgba(201,169,106,.18);
+}
+.stage-txt{flex:1;min-width:220px;font-size:.9rem;color:var(--muted);line-height:1.7}
+.stage-txt b{color:var(--text);font-weight:500}
+.stage-cta{
+  font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gold);text-decoration:none;border:1px solid var(--gold);border-radius:20px;
+  padding:.4rem .95rem;transition:background .2s,color .2s;white-space:nowrap;
+}
+.stage-cta:hover{background:var(--gold);color:var(--white)}
+html[data-theme="dark"] .stage-cta:hover{color:#0f141b}
+
+/* pastilles d'état : acquis / en cours */
+.badge{
+  font-family:'JetBrains Mono',monospace;font-size:.55rem;letter-spacing:.09em;text-transform:uppercase;
+  border-radius:20px;padding:.16rem .6rem;border:1px solid;white-space:nowrap;
+}
+.badge-ok{color:var(--teal);border-color:rgba(125,181,161,.5);background:rgba(125,181,161,.1)}
+.badge-wip{color:var(--gold);border-color:rgba(201,169,106,.5);background:rgba(201,169,106,.1)}
+
+/* grille des qualités */
+.qual{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:.6rem}
+@media(max-width:620px){.qual{grid-template-columns:1fr}}
+.qual-i{
+  background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.25rem;
+  transition:border-color .25s,transform .25s;
+}
+.qual-i:hover{border-color:rgba(201,169,106,.35);transform:translateY(-3px)}
+.qual-h{
+  font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.06em;color:var(--text);
+  margin-bottom:.45rem;display:flex;align-items:center;gap:.5rem;
+}
+.qual-h svg{width:1em;height:1em;fill:none;stroke:var(--gold);stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.qual-d{font-size:.85rem;color:var(--muted);line-height:1.75}
+.qual-p{
+  font-size:.79rem;color:var(--muted);line-height:1.7;margin-top:.55rem;
+  padding-top:.55rem;border-top:1px dashed var(--border);
+}
+.qual-p b{color:var(--teal);font-weight:500;font-family:'JetBrains Mono',monospace;font-size:.62rem;
+  letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:.2rem}
+
+/* lien « voir le code » sur les pages projet */
+.repo{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;border:1px solid var(--border);border-radius:8px;
+  padding:.5rem 1rem;transition:color .2s,border-color .2s;
+}
+.repo:hover{color:var(--gold);border-color:var(--gold)}
+.repo svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.6;
+  stroke-linecap:round;stroke-linejoin:round}
+
+/* bilan « ce que j'ai gagné / ce que je referais autrement » */
+.bilan{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.4rem}
+@media(max-width:660px){.bilan{grid-template-columns:1fr}}
+.bilan-c{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.25rem}
+.bilan-plus{border-left:3px solid var(--teal)}
+.bilan-moins{border-left:3px solid var(--gold)}
+.bilan-c b{
+  display:block;font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.1em;
+  text-transform:uppercase;margin-bottom:.7rem;font-weight:500;
+}
+.bilan-plus b{color:var(--teal)}
+.bilan-moins b{color:var(--gold)}
+.bilan-c ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.bilan-c li{position:relative;padding-left:1.1rem;font-size:.85rem;color:var(--muted);line-height:1.72}
+.bilan-c li::before{content:'';position:absolute;left:0;top:.62em;width:5px;height:5px;border-radius:50%;background:var(--border)}
+.bilan-plus li::before{background:var(--teal)}
+.bilan-moins li::before{background:var(--gold)}
+.bilan-c li strong{color:var(--text);font-weight:500}
