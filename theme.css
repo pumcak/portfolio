@@ -24,6 +24,7 @@ html[data-theme="dark"] .hero::before{
 
 /* place le menu + les boutons à droite */
 .nav-list{margin-left:auto}
+.nav-list li{display:flex}
 
 /* bouton bascule de thème */
 .theme-toggle{
