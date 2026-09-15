@@ -65,6 +65,11 @@ footer a{color:var(--gold);text-decoration:none}
 .a3{animation:up .65s .22s ease both}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}.a1,.a2,.a3{opacity:1;transform:none}}
 @media(max-width:660px){nav{padding:0 1.2rem}.nav-list{display:none;position:fixed;top:58px;left:0;right:0;flex-direction:column;background:var(--bg2);border-bottom:1px solid var(--border);padding:1rem 1.4rem;gap:.1rem}.nav-list.open{display:flex}.burger{display:flex}.wrap{padding:5.5rem 1.2rem 4rem}}
+/* Correctifs ciblés : bouton de contact et icônes des qualités */
+.stage-cta{display:inline-flex;align-items:center;justify-content:center;min-height:2.25rem;font-family:'JetBrains Mono',monospace;font-size:.64rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#ffffff;background:#c9a96a;text-decoration:none;border:1px solid #c9a96a;border-radius:8px;padding:.45rem 1rem;white-space:nowrap;transition:background .2s,border-color .2s}
+.stage-cta:hover{color:#ffffff;background:#b8924e;border-color:#b8924e}
+html[data-theme="dark"] .stage-cta:hover{color:#ffffff}
+.qual-h svg{display:block;width:.95rem;height:.95rem;fill:none;stroke:var(--gold);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 </style>
 </head>
 <body>
