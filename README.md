@@ -1,4 +1,4 @@
-# Portfolio — Timéo Chabal
+# Portfolio de Timéo Chabal
 
 Portfolio personnel écrit et déployé à la main, sans framework ni générateur de site statique.
 Réalisé dans le cadre du BUT Informatique à l'IUT Clermont Auvergne.
@@ -27,12 +27,12 @@ outil.
 
 ## Ce qu'il contient
 
-- **Bilingue FR / EN** — version anglaise complète dans `en/`, bascule de langue page à page
-- **Thème clair / sombre** — bascule manuelle, préférence mémorisée en `localStorage`
-- **Responsive** — mise en page fluide du mobile au grand écran
-- **Accessibilité** — palette choisie pour respecter le contraste AA, navigation au clavier,
+- **Bilingue FR / EN** : version anglaise complète dans `en/`, bascule de langue page à page
+- **Thème clair / sombre** : bascule manuelle, préférence mémorisée en `localStorage`
+- **Responsive** : mise en page fluide du mobile au grand écran
+- **Accessibilité** : palette choisie pour respecter le contraste AA, navigation au clavier,
   attributs `alt` et repères ARIA sur la navigation
-- **Aucune dépendance** — pas de npm, pas de build : les fichiers servis sont les fichiers écrits
+- **Aucune dépendance** : ni npm ni build, les fichiers servis sont les fichiers écrits
 
 ## Structure
 
@@ -44,8 +44,8 @@ cursus.html           Parcours de formation
 hobbies.html          Activités extra-scolaires
 realisations.html     Vue d'ensemble des projets
 sae.html              Liste des SAÉ
-sae-1.html            SAÉ 1.02 — gestion de stock en C
-sae-2.html            SAÉ 2.01 — Onitama en C# / .NET MAUI
+sae-1.html            SAÉ 1.02, gestion de stock en C
+sae-2.html            SAÉ 2.01, Onitama en C# / .NET MAUI
 perso.html            Bot Discord de modération
 en/                   Version anglaise complète
 theme.css / theme.js  Feuille de style et script partagés (thème, navigation)
